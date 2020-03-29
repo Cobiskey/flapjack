@@ -8,10 +8,10 @@ func _physics_process(delta):
 	_velocity.y += gravity * delta
 	if is_on_wall():
 		_velocity.x *= -1.0
-		$groundCollision.position.x *= -1
-	if $groundCollision.is_colliding() == false:
+		$groundCollision.position.x *= -1.0
+	if $groundCollision.is_colliding() == false and is_on_floor():
 		_velocity.x *= -1.0
-		$groundCollision.position.x *= -1
+		$groundCollision.position.x *= -1.0
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 	set_sprite_direction()
 

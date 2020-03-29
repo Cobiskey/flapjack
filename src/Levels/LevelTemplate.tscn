@@ -239,8 +239,8 @@ tile_data = PoolIntArray( 524286, 8, 0, 458752, 0, 0, 458753, 3, 0, 458755, 2, 0
 position = Vector2( 153, 583 )
 speed = Vector2( 400, 1000 )
 
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1020.14, 570.853 )
+[node name="Skelly" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1110.37, 576.613 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
