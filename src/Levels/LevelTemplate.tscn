@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/grass2.png" type="Texture" id=2]
-[ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Actors/skelly.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/grass1-export.png" type="Texture" id=4]
 [ext_resource path="res://assets/grass3.png" type="Texture" id=5]
 [ext_resource path="res://assets/below3.png" type="Texture" id=6]
@@ -239,5 +239,13 @@ tile_data = PoolIntArray( 524286, 8, 0, 458752, 0, 0, 458753, 3, 0, 458755, 2, 0
 position = Vector2( 153, 581.947 )
 speed = Vector2( 400, 1000 )
 
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1436, 425 )
+[node name="Skelly" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1110.37, 576.613 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2( 663.45, 567.82 )
+scale = Vector2( 14, 14 )
