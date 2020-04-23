@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/Actors/skelly.gd" type="Script" id=1]
 [ext_resource path="res://assets/Characters/Skeleton1/f1.png" type="Texture" id=2]
@@ -19,7 +19,17 @@
 [ext_resource path="res://assets/Characters/Skeleton1/skellyAttack9.png" type="Texture" id=17]
 [ext_resource path="res://assets/Characters/Skeleton1/skellyAttack11.png" type="Texture" id=18]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="VisualShader" id=1]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[sub_resource type="VisualShader" id=3]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": false,
@@ -37,23 +47,27 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 31.8628, 62.2542 )
 
 [node name="Skelly" type="KinematicBody2D"]
+material = SubResource( 2 )
 collision_layer = 2
 collision_mask = 9
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
+material = SubResource( 4 )
+frames = SubResource( 5 )
 animation = "idle"
+frame = 2
 playing = true
 offset = Vector2( 0, -62 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0.589325, -60.6278 )
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 visible = false
@@ -64,18 +78,21 @@ process_parent = true
 physics_process_parent = true
 
 [node name="groundCollision" type="RayCast2D" parent="."]
+visible = false
 position = Vector2( -32.3545, -126.413 )
 scale = Vector2( 1, 4 )
 enabled = true
 collision_mask = 9
 
 [node name="seePlayer" type="RayCast2D" parent="."]
+visible = false
 position = Vector2( 0, -60 )
 rotation = 1.5708
 scale = Vector2( 1, 6 )
 enabled = true
 
 [node name="attackPlayer" type="RayCast2D" parent="."]
+visible = false
 modulate = Color( 1, 0.0235294, 0.0235294, 1 )
 position = Vector2( 0, -60 )
 rotation = 1.5708

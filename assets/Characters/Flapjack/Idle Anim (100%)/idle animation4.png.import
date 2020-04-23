@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/skellyAttack12.png-e8cb5a5c26b264fbbd928589cc14c543.stex"
+path="res://.import/idle animation4.png-7e4bea5da69883fe868d0c00cd91c3f8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Characters/Skeleton1/skellyAttack12.png"
-dest_files=[ "res://.import/skellyAttack12.png-e8cb5a5c26b264fbbd928589cc14c543.stex" ]
+source_file="res://assets/Characters/Flapjack/Idle Anim (100%)/idle animation4.png"
+dest_files=[ "res://.import/idle animation4.png-7e4bea5da69883fe868d0c00cd91c3f8.stex" ]
 
 [params]
 
